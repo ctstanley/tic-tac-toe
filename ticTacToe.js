@@ -1,11 +1,12 @@
 window.addEventListener("load", function () {
 
 	var count = 0;
+	
+
 	var loc = document.querySelector("#board");
 	loc.addEventListener("mouseover", function(event){
 		var ig = event.target.id.toString();
 		console.log(event.target)
-	
 	
 	if (typeof(ig) != "undefined" && ig != "board"){
 	
@@ -29,12 +30,22 @@ window.addEventListener("load", function () {
 			count = 0;
 			}
 			else {
-				alert("Wrong Space!")
+				console.log("Wrong Space!")
 			}
 	console.log(count)
 		}); 
 	}
-
+	});
+	
+	var res = document.querySelectorAll(".box")
+	var reset = document.querySelector("#reset");
+	reset.addEventListener("click", function(event){
+		for (var i = 0; i < res.length; i++) {
+			var clear = res[i];
+			clear.innerHTML = '&nbsp;';
+			clear.style.backgroundColor = "";
+			count = 0;
+		};
 	});
 
 
