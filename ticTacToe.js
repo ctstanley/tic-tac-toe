@@ -31,11 +31,12 @@ window.addEventListener("load", function () {
 			}
 			else {
 				console.log("Wrong Space!")
-			}
+			};
 	console.log(count)
 		}); 
 	}
 	});
+
 	
 	var res = document.querySelectorAll(".box")
 	var reset = document.querySelector("#reset");
@@ -47,6 +48,9 @@ window.addEventListener("load", function () {
 			count = 0;
 		};
 	});
-
-
+	
 });
+
+
+///too late to code winner, but if i was to do it I would create if statements with
+///arrays ["x","x","x"], also turns would be coded similarly
