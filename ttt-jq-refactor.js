@@ -25,7 +25,7 @@
   // Disallow moves after the game has been won
   // checks box
  
-$(".square p").click(function(){
+$(".square p").unbind().click(function(){
   if (this.innerHTML === '' && turn !== "game_over"){
     this.innerHTML = turn;  // turn = X or O
     this.setAttribute('class', turn);
@@ -36,7 +36,7 @@ $(".square p").click(function(){
     alert("The game is over!  Click 'reset' to play again.");
   }
   else {
-    console.log('That square has already been played!');
+    alert('That square has already been played!');
   }
 });
  
@@ -117,7 +117,7 @@ $(".reset").click(function(){
     else
       return null;
   }
-
+$(".square p")
   // If a winning combination of squares exists, return the win
   // in the form of a string denoting the winning squares, e.g. '048'
   function winnerIs(player) {
@@ -142,15 +142,15 @@ $(".reset").click(function(){
       // we want to persist the data denoting the location of the square on the board,
       // as this will allow us to highlight winning squares in the event of a win
       // example return values are 'X5', '02', '7' (space hasn't been played)
-      case '0': return squares[0].innerHTML + '0';
-      case '1': return squares[1].innerHTML + '1';
-      case '2': return squares[2].innerHTML + '2';
-      case '3': return squares[3].innerHTML + '3';
-      case '4': return squares[4].innerHTML + '4';
-      case '5': return squares[5].innerHTML + '5';
-      case '6': return squares[6].innerHTML + '6';
-      case '7': return squares[7].innerHTML + '7';
-      case '8': return squares[8].innerHTML + '8';
+      case '0': return $(".square p")[0].innerHTML + '0';
+      case '1': return $(".square p")[1].innerHTML + '1';
+      case '2': return $(".square p")[2].innerHTML + '2';
+      case '3': return $(".square p")[3].innerHTML + '3';
+      case '4': return $(".square p")[4].innerHTML + '4';
+      case '5': return $(".square p")[5].innerHTML + '5';
+      case '6': return $(".square p")[6].innerHTML + '6';
+      case '7': return $(".square p")[7].innerHTML + '7';
+      case '8': return $(".square p")[8].innerHTML + '8';
       default : console.log('Something went wrong');
     }
   }
